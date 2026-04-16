@@ -1,4 +1,4 @@
-# Book Classifier
+# Book Recommender
 Classifies books based on specific dataset features
 
 ## Relevant Project Sources
