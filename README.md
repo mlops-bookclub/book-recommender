@@ -8,3 +8,4 @@ Classifies books based on specific dataset features
 - [DVC Start](https://doc.dvc.org/start)
 - [Docker Get Started](https://docs.docker.com/get-started/)
 - [Pytest Get Started](https://docs.pytest.org/en/stable/getting-started.html)
+- [Streamlist Docs](https://docs.streamlit.io/)
