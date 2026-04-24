@@ -4,3 +4,12 @@ google-cloud-storage
 
 # Testing
 pytest
+
+# Exploratory data analysis
+ipykernel
+matplotlib
+nbclient
+nbformat
+numpy
+pandas
+seaborn
