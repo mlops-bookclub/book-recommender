@@ -21,6 +21,27 @@ See [docs/architecture.md](docs/architecture.md) for the planned MLOps system ar
 - [Pytorch Docs](https://docs.pytorch.org/docs/stable/index.html?_gl=1*xxz00o*_up*MQ..*_ga*ODY5MjEyMzA4LjE3NzYzMzI3MjY.*_ga_469Y0W5V62*czE3NzYzMzI3MjUkbzEkZzAkdDE3NzYzMzI3MjUkajYwJGwwJGgw)
 - [Fast API](https://fastapi.tiangolo.com/tutorial/first-steps/)
 - [GitHub Actions QuickStart](https://docs.github.com/en/actions/get-started/quickstart)
+
+# Repository Structure
+book-recommender/
+├── .dvc/                     # DVC configuration
+├── .github/workflows/        # CI/CD pipelines
+├── docs/                     # Documentation and Reports for Submissions
+├── frontend/                 
+│   ├── src/
+│   └── tests/
+├── backend/                  # API and model serving                   
+│   ├── src/
+│   └── tests/               
+├── ml_pipeline/              # Data preparation, model training, evaluation, ... 
+│   ├── src/
+│   └── tests/
+├── experiments/              # Exploratory Data Analysis and prototyping notebooks
+├── infrastructure/           # Ops (e.g. Terraform for Cloud provisioning)
+├── integration_tests/        # Tests spanning multiple services
+├── models/                   # Tracked via DVC (the physical artifacts)
+└── data/                     # Tracked via DVC (raw and processed)
+
 # Data Setup: Git, DVC, and GCP
 
 This project uses [Git](https://git-scm.com/) for source code version control and [DVC (Data Version Control)](https://dvc.org/) for managing large datasets and model files. Our DVC remote storage is hosted in a Google Cloud Platform (GCP) bucket.

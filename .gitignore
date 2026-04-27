@@ -212,3 +212,5 @@ gcp-bookclub-bucket.json
 # Local reference material
 infos/
 datascience-project-main/
+
+.idea
