@@ -2,12 +2,12 @@
 
 ## Overview
 
-The FastAPI backend lives under `app/backend/` and serves as the inference API for the Book Recommender service. It is deployed inside a Docker container and consumed by the Streamlit frontend (see architecture diagram).
+The FastAPI backend lives under `backend/` and serves as the inference API for the Book Recommender service. It is deployed inside a Docker container and consumed by the Streamlit frontend (see architecture diagram).
 
 ## Directory Structure
 
 ```
-app/backend/
+backend/
 ├── src/
 │   ├── __init__.py
 │   ├── main.py                  # FastAPI application entry point
