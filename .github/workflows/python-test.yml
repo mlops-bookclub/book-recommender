@@ -37,7 +37,7 @@ jobs:
         run: uv sync --group dev
 
       - name: Run tests
-        run: uv run pytest tests -q
+        run: uv run python -m pytest tests -q
 
   integration_tests:
     name: Integration tests
@@ -52,8 +52,5 @@ jobs:
           python-version: "3.12"
           enable-cache: true
 
-      - name: Install dependencies
-        run: uv pip install --system pytest
-
       - name: Run tests
-        run: pytest integration_tests -q
+        run: uv run --with pytest pytest integration_tests -q
