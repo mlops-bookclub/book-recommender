@@ -95,15 +95,8 @@ dvc pull
 
 ## First Recommendation Baseline
 
-The current baseline is an item-item collaborative filtering recommender built from `data/raw/goodbooks-10k/ratings.csv`.
+The current baseline is an item-item collaborative filtering recommender.
 - [Baseline Recommender](docs/baseline_recommender.md)
-
-- Treat ratings of `4` or `5` as positive user-book interactions.
-- Use a leave-one-out split per user and hold out each user's last positive interaction for testing.
-- Build book-book similarity from shared readers only.
-- Keep the top `50` most similar books per book.
-- Score unseen candidate books by summing similarity contributions from the books in each user's training history.
-- Recommend the top `10` unseen books.
 
 Book-book similarity uses cosine similarity over binary user interaction vectors:
 
@@ -127,9 +120,3 @@ python -m ml_pipeline.src.trainers.run_baseline
 
 The metrics artifact is written to `models/metrics/item_based_cf_baseline.json` by default.
 
-Current full-run baseline result:
-
-- `top_neighbors = 50`
-- `HitRate@10 = 0.0431`
-- `Recall@10 = 0.0431`
-- `53,398` users evaluated
