@@ -1,7 +1,8 @@
 #!/bin/bash
 set -e
 
-cd ~/book-recommender
+REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$REPO_ROOT"
 
 # Load environment variables
 set -a
