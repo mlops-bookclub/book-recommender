@@ -1,4 +1,11 @@
+<p align=right style="margin-bottom: -2rem">
+  <a href="https://github.com/mlops-bookclub/book-recommender/actions/workflows/tests.yml">
+    <img src="https://github.com/mlops-bookclub/book-recommender/actions/workflows/tests.yml/badge.svg?branch=main&event=push" alt="Test">
+  </a>
+</p>
+
 # Book Recommender
+
 Classifies books based on specific dataset features
 
 ## Branching Strategy
@@ -58,7 +65,7 @@ book-recommender/
 
 ## Weights and Biases Setup
 
-Create a Weights & Biases Api Token and save it in the .env file in the root directory of the project as: 
+Create a Weights & Biases Api Token and save it in the .env file in the root directory of the project as:
 WANDB_API_KEY=....
 
 ## Data Setup: Git, DVC, and GCP
@@ -117,6 +124,7 @@ dvc pull
 ## First Recommendation Baseline
 
 The current baseline is an item-item collaborative filtering recommender.
+
 - [Baseline Recommender](docs/baseline_recommender.md)
 
 Book-book similarity uses cosine similarity over binary user interaction vectors:
@@ -146,4 +154,3 @@ python -m ml_pipeline.src.trainers.run_baseline --ratings-path data/raw/goodbook
 ```
 
 The metrics artifact is written to `models/metrics/item_based_cf_baseline.json`, tracked by DVC, and pushed to `gs://bookclub-bookdata` after each training run. Experiment metrics are logged to [Weights & Biases](https://wandb.ai/mlops-bookclub/mlops-bookclub).
-
