@@ -31,16 +31,22 @@ ssh -i ~/.ssh/<your_key> bookclub@34.65.157.169
 
 Your public key must be in `/home/bookclub/.ssh/authorized_keys` on the VM. Contact the project administrator to add it.
 
-## 2. GitHub Access
+## 2. Verify GitHub SSH Authentication
 
-The `bookclub` user does not have a GitHub SSH key configured. The remote is set to HTTPS:
+The `bookclub` user has an SSH key registered with GitHub. Verify it is working:
 
 ```bash
-git -C ~/book-recommender remote get-url origin
-# https://github.com/mlops-bookclub/book-recommender.git
+ssh -T git@github.com
+# Hi <username>! You've successfully authenticated...
 ```
 
-`git pull` works without authentication (public repo). `train.sh` will skip the `git push` step by default — set `GIT_PUSH_AFTER_TRAIN=1` only if you have a token configured.
+If the above fails, check that `~/.ssh/private_key` exists on the VM and contact the project administrator.
+
+Ensure the remote uses SSH (not HTTPS):
+
+```bash
+git -C ~/book-recommender remote set-url origin git@github.com:mlops-bookclub/book-recommender.git
+```
 
 ## 3. Set Up Python Environment
 
