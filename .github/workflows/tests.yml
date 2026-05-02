@@ -54,6 +54,8 @@ jobs:
 
       - name: Install dependencies
         run: uv pip install requirements.txt
+        env:
+          UV_SYSTEM_PYTHON: 1
 
       - name: Run tests
         run: cd ml_pipeline && uv run pytest tests
