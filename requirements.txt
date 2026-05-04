@@ -17,3 +17,6 @@ numpy
 pandas
 scipy
 seaborn
+
+# frontend
+streamlit
